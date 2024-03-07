@@ -6,33 +6,38 @@
   doc
 ) = {
   set text(lang: "fr")
-  set page("a4")
+  set page(
+    "a4",
+    margin: 0%
+  )
 
   place(image("cover.jpg"))
+  
   place(
-    dx: 2cm,
-    dy: 5cm,
-    par(
-      leading: 15pt,
-      text(size: 14pt, cover-header)
-    )
-  )
-  place(
-    dx: 8cm,
-    dy: 20cm,
+    dx: 2.5cm,
+    dy: 6.5cm,
     box(
       width: 8.5cm,
       par(
         leading: 15pt,
         justify: false,
-        text(size: 24pt, weight: "bold", cover-title)
+        text(size: 28pt, weight: "bold", cover-title)
       )
+    )
+  )
+  place(
+    dx: 2.5cm,
+    dy: 15cm,
+    par(
+      leading: 15pt,
+      text(size: 18pt, cover-header)
     )
   )
   
   counter(page).update(0)
   set page(
     "a4",
+    margin: auto,
     header-ascent: 25%,
     footer: [
       #place(
@@ -121,7 +126,7 @@
         )
       ]).join(linebreak())\
       #sub-authors\
-      #set text(12pt)
+      #set text(14pt)
       #if type(date) == datetime [
           #date.display("[day]/[month]/[year]")
         ] else [
@@ -129,7 +134,6 @@
         ]
     ],
     cover-title: [
-      #set text(size: 28pt, weight: "bold")
       #if pre-title != none [
         #pre-title #sym.hyph
       ]
@@ -143,7 +147,7 @@
       set math.equation(numbering: "(1)")
       set par(justify: true)
       set text(hyphenate: false)
-      set heading(numbering: "I.1 -")
+      set heading(numbering: "I.1.a -")
       show heading.where(level: 1): it => [
         #set text(18pt)
         #smallcaps(it)
