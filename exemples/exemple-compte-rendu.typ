@@ -1,17 +1,19 @@
 #import "../insa-template/template.typ" : *
 #show: doc => insa-report(
   id: 3,
-  pre-title: "STPI X",
+  pre-title: "S4 STPI",
   title: "Interférences et diffraction",
   authors: ("NOM1 Prénom1", "NOM2 Prénom2"),
   sub-authors: [
-    STPI XX\
+    STPI 2H\
     Binôme X
   ],
   date: "11/04/2023",
   doc)
 
-Template fait pour des comptes-rendus (notamment ceux de STPI) :
+#heading(numbering: none, "Introduction")
+
+Template fait pour des comptes-rendus (notamment ceux des TP de physique de STPI) :
 - règles de numérotation incluse
 - équations numérotées aussi
 - paragraphes justifiés
@@ -20,7 +22,10 @@ Template fait pour des comptes-rendus (notamment ceux de STPI) :
 - les blocs de code sont automatiquement entourés d'un trait
 
 = Théorie blabla
-== Sous-partie 1
+
+#counter(heading).step(level:2) // permet de sauter une sous partie si y'a rien à dire notamment
+
+== Les fentes euh... diffraction euhh arctangente
 
 Une petite équation:
 $ (lambda D) / (n pi) = "truc au pif" $
@@ -30,9 +35,9 @@ Des maths sur la même ligne: $a b = sqrt(b a)$
 
 Maintenant voici du contenu:
 
-#tableau(/*tableau ici*/"texte à la place", caption: "Random tablelau au pif")
+#tableau(/*fonction tableau ici*/"texte à la place", caption: "Random tableau au pif")
 
-#figure(/*image ici*/"texte à la place", caption: "Random image ua pif")
+#figure(image("../illustrations/github-download.png", width: 50%), caption: "Exemple d'image")
 
 === Un bloc de code en Java
 ```java

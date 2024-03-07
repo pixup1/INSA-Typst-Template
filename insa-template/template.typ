@@ -120,7 +120,13 @@
           auteur
         )
       ]).join(linebreak())\
-      #sub-authors
+      #sub-authors\
+      #set text(12pt)
+      #if type(date) == datetime [
+          #date.display("[day]/[month]/[year]")
+        ] else [
+          #date
+        ]
     ],
     cover-title: [
       #set text(size: 28pt, weight: "bold")
@@ -137,7 +143,7 @@
       set math.equation(numbering: "(1)")
       set par(justify: true)
       set text(hyphenate: false)
-      set heading(numbering: "1.")
+      set heading(numbering: "I.1 -")
       show heading.where(level: 1): it => [
         #set text(18pt)
         #smallcaps(it)
