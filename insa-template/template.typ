@@ -76,7 +76,8 @@
       #line(length: 100%)
     ]
   )
-
+  
+  set par(justify: true)
   set text(font:bodyfont, size: 11pt)
   show heading: set text(font:titlefont)
   show heading.where(level:1): set text(size:18pt)
@@ -164,7 +165,6 @@
     date: date,
     {
       set math.equation(numbering: "(1)")
-      set par(justify: true)
       set text(hyphenate: false)
       set heading(numbering: "I.1.a -")
       show heading.where(level: 1): it => [
