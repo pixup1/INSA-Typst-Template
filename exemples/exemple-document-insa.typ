@@ -8,6 +8,7 @@
   ],
   cover-title: "Document important",
   page-header: "En-tête au pif",
+  first-page-empty: true,
   doc
 )
 

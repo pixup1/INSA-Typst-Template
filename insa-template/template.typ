@@ -2,6 +2,7 @@
   cover-header: [],
   cover-title: [],
   page-header: [],
+  first-page-empty: false,
   date: datetime.today(),
   doc
 ) = {
@@ -38,7 +39,12 @@
     )
   )
   
-  counter(page).update(0)
+  if first-page-empty [
+    #pagebreak()
+    #counter(page).update(0)
+    #pagebreak()
+  ] else [#counter(page).update(0)]
+  
   set page(
     "a4",
     margin: auto,
