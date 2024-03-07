@@ -5,7 +5,11 @@
   date: datetime.today(),
   doc
 ) = {
-  set text(lang: "fr")
+  let titlefont = "Liberation Sans"
+  let bodyfont = "Source Serif Pro"
+  
+  set text(lang: "fr", font:titlefont)
+  
   set page(
     "a4",
     margin: 0%
@@ -40,6 +44,7 @@
     margin: auto,
     header-ascent: 25%,
     footer: [
+      #set text(font:titlefont)
       #place(
         right,
         dy: -0.6cm,
@@ -54,6 +59,7 @@
       )
     ],
     header: [
+      #set text(font:titlefont)
       #page-header
       #h(1fr)
       #if type(date) == datetime [
@@ -64,6 +70,13 @@
       #line(length: 100%)
     ]
   )
+
+  set text(font:bodyfont, size: 11pt)
+  show heading: set text(font:titlefont)
+  show heading.where(level:1): set text(size:18pt)
+  show heading.where(level:2): set text(size:15pt)
+  show heading.where(level:3): set text(size:13pt)
+  show outline: set text(font:titlefont,size:11pt)
   
   doc
 }
