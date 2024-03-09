@@ -1,3 +1,6 @@
+#let titlefont = "Liberation Sans"
+#let bodyfont = "Source Serif Pro"
+
 #let insa(
   cover-header: [],
   cover-title: [],
@@ -6,9 +9,6 @@
   date: datetime.today(),
   doc
 ) = {
-  let titlefont = "Liberation Sans"
-  let bodyfont = "Source Serif Pro"
-  
   set text(lang: "fr", font:titlefont)
   
   set page(
@@ -175,6 +175,85 @@
       doc
     }
   )
+}
+
+#let insa-cv(
+  introduction: [],
+  photo:"",
+  doc
+) = {
+  set text(size: 12pt,font:bodyfont)
+  
+  let marginx = 2.5cm
+  let marginy = 3.2cm
+  
+  set page(
+    paper: "a4",
+    margin: (x:marginx,y:marginy),
+    header: [
+      #place(pad(rect(fill:rgb(228,38,24), width: 100%, height: 100%),left: -2.5cm, right:-2.5cm))
+      #place(image("logo-white.png",height:50%),dy:25%,dx:{-marginx+ 18pt})
+    ],
+    footer: [
+      #place(
+        right,
+        dy: -0.6cm,
+        dx: 1.9cm,
+        image("footer.png",height:63.5pt)
+      )
+      #place(
+        right,
+        dx: 1.467cm,
+        dy: 0.935cm,
+        text(fill: white, weight: "bold", counter(page).display())
+      )
+    ],
+    header-ascent: 35%
+  )
+  
+  set par(justify: true)
+  set list(marker:(text(sym.square.filled.tiny,size: 0.8em)))
+  
+  show heading: (it) => {
+    set text(size:14pt,font:titlefont)
+    set align(center)
+    set strong()
+    
+    v(12pt)
+    box(
+      place(
+        text(
+          sym.triangle.filled.tl,
+          size:12pt,
+          fill:rgb(228,38,24)
+          ),
+        dx: -11pt,
+        dy: -16pt
+      ),
+    )
+    it.body
+    v(-10pt)
+    line(length:100%,stroke:0.6pt)
+    v(8pt)
+  }
+
+  place(image("cross-pattern.jpg", width: 140pt), dx: 370pt,dy:-19pt)
+  
+  if photo != "" {
+    place(image("../"+photo,height:150pt),dx:75%,dy:-8%)
+  }
+  
+  par[
+    #set block(spacing: 0.8em) // Espacement entre les parbreak
+    
+    #introduction
+  ]
+
+  v(5pt)
+
+  set block(spacing: 0.9em)
+  
+  doc
 }
 
 #let tableau(content, caption: none) = {
