@@ -93,7 +93,7 @@
   date : datetime.today(),
   doc
 ) = {
-  set text(lang: "fr")
+  set text(lang: "fr", font:bodyfont, size: 11pt)
   set page(
     "a4",
     margin: (top: 3.2cm),
