@@ -16,7 +16,7 @@
     margin: 0%
   )
 
-  place(image("cover.jpg"))
+  place(image("cover.jpg", width:100%))
   
   place(
     dx: 2.5cm,
