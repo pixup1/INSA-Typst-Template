@@ -134,6 +134,7 @@
   title: none,
   authors: (),
   sub-authors: none,
+  first-page-empty: false,
   date: none,
   doc,
 ) = {
@@ -162,6 +163,7 @@
       #smallcaps(title)
     ],
     page-header: [TP #id #sym.hyph #smallcaps(title)],
+    first-page-empty: first-page-empty,
     date: date,
     {
       set math.equation(numbering: "(1)")
