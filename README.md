@@ -1,8 +1,8 @@
 # INSA - Typst Template
-Typst Template for documents from the french engineering school INSA.
+Typst Template for documents from the french engineering school INSA. Includes a CV template which is not from the graphical charter but inspired by it.
 
 ## Examples
-You can find examples for the 3 document types [in the `exemples` folder](exemples).
+You can find examples for the 4 document types [in the `exemples` folder](exemples).
 
 ## Usage
 1. Download the code from GitHub. To do that, click on the green "Code" button and then "Download ZIP".  
