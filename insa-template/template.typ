@@ -174,6 +174,16 @@
         #smallcaps(it)
       ]
       show raw.where(block: true): it => block(stroke: 0.5pt + black, inset: 5pt, width: 100%, it)
+      set ref(supplement:none)
+      show list.item: set par(justify: false)
+      show link: underline
+      set table(
+        fill: (x, y) =>
+        if x == 0 or y == 0 {
+           gray.lighten(70%)
+        },
+        align: right,
+      )
       doc
     }
   )
